@@ -1,0 +1,14 @@
+<% statusFilterHelper = (statusFilter, keyword) => { 
+statusFilter.forEach((value, index, array) => { 
+        let link=  systemConfig.prefixAdmin + '/items/status/' + value.value;
+        if(keyword != '' && keyword != undefined) link += '?keyword=' + keyword;
+    %>
+
+
+        <a href="<%= link %>" class="mr-1 btn btn-sm btn-<%= value.class %>"> <%= value.name %> <span class="badge badge-pill badge-light"><%= value.count %></span></a>
+    
+     <% }) 
+    }%>
+
+
+
